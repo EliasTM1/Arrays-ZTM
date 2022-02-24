@@ -160,12 +160,79 @@ function findTheFirstRepeated(arra) {
         } else if (result.includes(myCopy[i])) {
             console.log(myCopy[i], "Este es el numero que se repite primero")
             return
-        } else {
-            console.log("return undefined")
         }
     }
+    console.log("U DEFINED")
 }
 
+
+function findTheFirstRepeatedOne(arra) {
+    let result = [];
+    let myCopy = [...arra];
+    let number
+
+    // * Loop the array 
+    for (let i = 0; i < myCopy.length; i++) {
+        // * If value is not included    ?    Push the value          : first repeated 
+        !result.includes(myCopy[i]) ? result.push(myCopy[i]) : number = myCopy[i];
+        console.log(result)
+        if (number === Number) break
+    }
+
+    console.log(number)
+
+}
+
+findTheFirstRepeated([2, 5, 5, 2, 3, 5, 1, 2, 4])
 // findTheFirstRepeated(noRepeat);
-findTheFirstRepeated(courseExample);
+// findTheFirstRepeated(courseExample);
+// findTheFirstRepeatedOne(courseExample);
 // findTheFirstRepeated(courseExample1);
+
+
+/*
+   _____  ____  _     _    _ _______ _____ ____  _   _
+  / ____|/ __ \| |   | |  | |__   __|_   _/ __ \| \ | |
+ | (___ | |  | | |   | |  | |  | |    | || |  | |  \| |
+  \___ \| |  | | |   | |  | |  | |    | || |  | | . ` |
+  ____) | |__| | |___| |__| |  | |   _| || |__| | |\  |
+ |_____/ \____/|______\____/   |_|  |_____\____/|_| \_|
+
+
+*/
+
+
+// * Space complexity O(1)
+// * Big O -- O(n square)
+
+function firstRecurringCharacter(input) {
+    for (let i = 0; i < input.length; i++) {
+        for (let j = i + 1; j < input.length; j++) {
+            if (input[i] === input[j]) {
+                return input[i];
+            }
+        }
+    }
+    return undefined
+}
+
+
+
+// * Space complexity
+// * Big O
+
+function firstRecurringCharacter2(input) {
+    let map = {};
+    for (let i = 0; i < input.length; i++) {
+        if (map[input[i]] !== undefined) {
+            return input[i]
+        } else {
+            map[input[i]] = i;
+        }
+    }
+    return undefined
+}
+
+// firstRecurringCharacter2()
+
+
