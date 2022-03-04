@@ -13,7 +13,7 @@ function isMakeFirstString(strings, toMatch) {
 
 }
 
-
+// ? 
 function cleaner(array) {
     let noRepeated = [];
     for (let i = 0; i < array.length; i++) {
